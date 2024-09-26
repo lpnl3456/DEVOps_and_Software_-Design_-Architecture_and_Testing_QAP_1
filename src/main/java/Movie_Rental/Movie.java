@@ -31,6 +31,14 @@ public class Movie {
         return availableCopies;
     }
 
+    public int getAmountBorrowed() {
+        return amountBorrowed;
+    }
+
+    public void setAmountBorrowed(int amountBorrowed) {
+        this.amountBorrowed = amountBorrowed;
+    }
+
     public double getPrice() {
         return price;
     }

@@ -9,9 +9,14 @@ public class MovieTest {
 
     public void borrowMovieTest(){
 
-        Movie movie = new Movie("Bob", 1,10.99);
+        Movie movie = new Movie("Bob", 6,10.99);
 
-        Assertions.assertTrue(movie.borrowMovie());
+        Assertions.assertNotNull(movie);
+
+        while(movie.getAmountBorrowed() != movie.getAvailableCopies()){
+            Assertions.assertTrue(movie.borrowMovie());
+        }
+
 
         Assertions.assertFalse(movie.borrowMovie());
 
