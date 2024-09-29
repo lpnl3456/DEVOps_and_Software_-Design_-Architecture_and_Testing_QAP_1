@@ -58,4 +58,18 @@ public class Movie {
             return true;
         }
     }
+
+    public boolean returnMovie(){
+
+        if(amountBorrowed != 0) {
+            amountBorrowed--;
+            System.out.println("Movie returned");
+            return true;
+        }
+
+        else{
+            return false;
+        }
+
+    }
 }
