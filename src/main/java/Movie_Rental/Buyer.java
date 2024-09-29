@@ -42,8 +42,9 @@ public class Buyer {
         }
 
         else{
-            movie.borrowMovie();
-            borrowedMovies.add(movie);
+           if(movie.borrowMovie()) {
+               borrowedMovies.add(movie);
+           }
         }
     }
 }
