@@ -44,7 +44,19 @@ public class Buyer {
         else{
            if(movie.borrowMovie()) {
                borrowedMovies.add(movie);
+               movie.borrowMovie();
            }
+        }
+    }
+
+    public void returnRentedMovie(Movie movie){
+
+        if(borrowedMovies.contains(movie)){
+            movie.returnMovie();
+            borrowedMovies.remove(movie);
+        }
+        else{
+            System.out.println(firstName + " " + lastName + " has not rented this movie");
         }
     }
 }
