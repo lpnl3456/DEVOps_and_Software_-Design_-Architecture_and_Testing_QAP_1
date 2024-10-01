@@ -31,5 +31,32 @@ public class MovieTest {
 
     }
 
+    @Test
+    public void returnMovie(){
+        RentalCompany company = new RentalCompany("BlockBuster");
+        Movie movie = new Movie("Bob", 6,10.99);
+
+        Assertions.assertNotNull(movie);
+
+        while(movie.getAmountBorrowed() != movie.getAvailableCopies()) {
+            movie.borrowMovie(company);
+        }
+
+        int amountBorrowed = movie.getAmountBorrowed();
+        Assertions.assertTrue(movie.returnMovie());
+        amountBorrowed--;
+
+        Assertions.assertEquals(amountBorrowed, movie.getAmountBorrowed());
+
+        while(movie.getAmountBorrowed() != 0){
+            Assertions.assertTrue(movie.returnMovie());
+            amountBorrowed--;
+            Assertions.assertEquals(amountBorrowed,movie.getAmountBorrowed());
+        }
+
+        }
+
     }
+
+
 
