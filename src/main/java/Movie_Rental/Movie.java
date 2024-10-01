@@ -48,13 +48,14 @@ public class Movie {
         return title;
     }
 
-    public boolean borrowMovie(){
+    public boolean borrowMovie(RentalCompany company){
         if(amountBorrowed == availableCopies){
             System.out.println("All copies of this movie have been borrowed");
             return false;
         }
         else{
             amountBorrowed++;
+            company.increaseEquity(price);
             return true;
         }
     }

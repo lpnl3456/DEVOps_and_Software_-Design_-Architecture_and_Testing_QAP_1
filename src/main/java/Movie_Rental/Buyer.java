@@ -35,16 +35,15 @@ public class Buyer {
         this.borrowedMovies = borrowedMovies;
     }
 
-    public void rentMovie(Movie movie){
+    public void rentMovie(Movie movie, RentalCompany company){
 
         if(borrowedMovies.contains(movie)){
             System.out.println("You have already Borrowed this movie");
         }
 
         else{
-           if(movie.borrowMovie()) {
+           if(movie.borrowMovie(company)) {
                borrowedMovies.add(movie);
-               movie.borrowMovie();
            }
         }
     }
