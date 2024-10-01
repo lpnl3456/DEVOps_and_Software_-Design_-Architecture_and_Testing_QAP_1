@@ -46,7 +46,7 @@ public class MovieTest {
         Assertions.assertTrue(movie.returnMovie());
         amountBorrowed--;
 
-        Assertions.assertEquals(amountBorrowed, movie.getAmountBorrowed());
+        Assertions.assertEquals(8, movie.getAmountBorrowed());
 
         while(movie.getAmountBorrowed() != 0){
             Assertions.assertTrue(movie.returnMovie());
