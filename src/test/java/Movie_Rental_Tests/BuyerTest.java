@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 public class BuyerTest {
     @Test
 
-    public void rentMovieTest(){
+    public void testRentMovie(){
 
         RentalCompany company = new RentalCompany("BlockBuster");
         Buyer buyer = new Buyer("Sam", "Smith");
@@ -24,7 +24,7 @@ public class BuyerTest {
     }
 
     @Test
-    public void returnRentedMovieTest() {
+    public void testReturnRentedMovie() {
         RentalCompany company = new RentalCompany("BlockBuster");
         Buyer buyer = new Buyer("Sam", "Smith");
         Movie avengers = new Movie("Avengers", 4, 5.99);

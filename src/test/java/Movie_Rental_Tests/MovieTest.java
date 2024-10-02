@@ -32,7 +32,7 @@ public class MovieTest {
     }
 
     @Test
-    public void returnMovie(){
+    public void testReturnMovie(){
         RentalCompany company = new RentalCompany("BlockBuster");
         Movie movie = new Movie("Bob", 6,10.99);
 
