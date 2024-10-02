@@ -19,6 +19,7 @@ public class BuyerTest {
         Assertions.assertNotNull(buyer.getBorrowedMovies());
         Assertions.assertTrue(buyer.getBorrowedMovies().contains(avengers));
 
+        //Test to see if the user can rent two of the same copy of movies
         int movieCounter = 0;
         buyer.rentMovie(starWars, company);
         for(Movie movie:buyer.getBorrowedMovies()){
