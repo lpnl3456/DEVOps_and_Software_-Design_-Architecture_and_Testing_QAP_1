@@ -19,15 +19,8 @@ public class BuyerTest {
         Assertions.assertNotNull(buyer.getBorrowedMovies());
         Assertions.assertTrue(buyer.getBorrowedMovies().contains(avengers));
 
-        int movieCounter = 0;
         buyer.rentMovie(starWars, company);
-        for(Movie movie:buyer.getBorrowedMovies()){
-            if(movie.getTitle().equals("Star Wars")){
-                movieCounter++;
-            }
-        }
-
-        Assertions.assertFalse(movieCounter == 2);
+        Assertions.assertTrue(buyer.getBorrowedMovies().contains(starWars));
     }
 
     @Test
