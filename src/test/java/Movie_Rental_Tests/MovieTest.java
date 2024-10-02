@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class MovieTest {
     @Test
 
-    public void borrowMovieTest(){
+    public void testBorrowMovie(){
 
         RentalCompany company = new RentalCompany("BlockBuster");
         Movie movie = new Movie("Bob", 6,10.99);
@@ -46,7 +46,7 @@ public class MovieTest {
         Assertions.assertTrue(movie.returnMovie());
         amountBorrowed--;
 
-        Assertions.assertEquals(0, movie.getAmountBorrowed());
+        Assertions.assertEquals(amountBorrowed, movie.getAmountBorrowed());
 
         while(movie.getAmountBorrowed() != 0){
             Assertions.assertTrue(movie.returnMovie());
