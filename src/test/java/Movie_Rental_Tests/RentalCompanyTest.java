@@ -21,4 +21,12 @@ public class RentalCompanyTest {
         Assertions.assertEquals((0+moviePrice), company.getEquity());
 
     }
+
+    @Test
+    public void testNameNotNull(){
+        RentalCompany company = new RentalCompany("BlockBuster");
+
+        Assertions.assertNotNull(company.getName());
+
+    }
 }
