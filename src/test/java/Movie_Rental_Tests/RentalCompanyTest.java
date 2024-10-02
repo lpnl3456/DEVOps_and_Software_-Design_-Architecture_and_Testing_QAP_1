@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class RentalCompanyTest {
     @Test
 
-    public void increaseEquityTest(){
+    public void testIncreaseEquity(){
         RentalCompany company = new RentalCompany("BlockBuster");
         Buyer buyer = new Buyer("Sam", "Smith");
         Movie avengers = new Movie("Avengers", 4, 5.99);
