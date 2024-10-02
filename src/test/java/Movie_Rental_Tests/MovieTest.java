@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class MovieTest {
     @Test
 
-    public void borrowMovieTest(){
+    public void testBorrowMovie(){
 
         RentalCompany company = new RentalCompany("BlockBuster");
         Movie movie = new Movie("Bob", 6,10.99);
