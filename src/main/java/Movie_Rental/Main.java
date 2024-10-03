@@ -48,6 +48,16 @@ public class Main {
             System.out.println();
         }
     }
+    public static void displayBuyerRentedMovies(){
+        System.out.println("These are the movies you are currently renting");
+        System.out.println();
+
+        for(Movie movie: buyer.getBorrowedMovies()){
+            System.out.println(movie.getTitle());
+            System.out.println();
+
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -63,7 +73,7 @@ public class Main {
 
         while(!endProgram){
             System.out.println("Hello " + buyer.getFirstName() + " welcome to " + company.getName());
-            System.out.println("Please enter an option\n1. Rent a Movie\n2. Return a Movie\n3. Exit");
+            System.out.println("Please enter an option\n1. Rent a Movie\n2. Return a Movie\n3. See movies you are currently renting\n4.Exit");
             option = input.next();
 
             switch(option){
@@ -75,6 +85,9 @@ public class Main {
                     System.out.println("Enter return option");
                     break;
                 case "3":
+                    displayBuyerRentedMovies();
+                    break;
+                case "4":
                     System.out.println("Thank you for using this program");
                     endProgram = true;
                     break;
