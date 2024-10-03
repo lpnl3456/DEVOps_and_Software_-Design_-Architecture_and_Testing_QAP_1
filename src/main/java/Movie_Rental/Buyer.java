@@ -38,12 +38,13 @@ public class Buyer {
     public void rentMovie(Movie movie, RentalCompany company){
 
         if(borrowedMovies.contains(movie)){
-            System.out.println("You have already Borrowed this movie");
+            System.out.println("You have already borrowed this movie");
         }
 
         else{
            if(movie.borrowMovie(company)) {
                borrowedMovies.add(movie);
+               System.out.println("You have now rented " + movie.getTitle());
            }
         }
     }
