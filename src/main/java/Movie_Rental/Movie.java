@@ -14,6 +14,9 @@ public class Movie {
         this.availableCopies = availableCopies;
         this.price = price;
     }
+    public Movie(){
+
+    }
 
     public void setTitle(String title) {
         this.title = title;
