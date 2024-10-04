@@ -15,12 +15,16 @@ public class BuyerTest {
         Buyer buyer = new Buyer("Sam", "Smith");
         Movie avengers = new Movie("Avengers", 4, 5.99);
         Movie starWars = new Movie("Star Wars", 6, 5.99);
+
+
         buyer.rentMovie(avengers, company);
         Assertions.assertNotNull(buyer.getBorrowedMovies());
+
+
         Assertions.assertTrue(buyer.getBorrowedMovies().contains(avengers));
 
 
-        //Test to see if the user can rent two of the same copy of movies
+        //Test to see if the user can't rent two of the same copy of movies
         int movieCounter = 0;
         buyer.rentMovie(starWars, company);
          for(Movie movie:buyer.getBorrowedMovies()){
@@ -28,8 +32,7 @@ public class BuyerTest {
                 movieCounter++;
             }
         }
-
-        Assertions.assertFalse(movieCounter == 2);
+        Assertions.assertNotEquals(2, movieCounter);
     }
 
     @Test
@@ -40,11 +43,10 @@ public class BuyerTest {
         Movie starWars = new Movie("Star Wars", 6, 5.99);
 
          buyer.rentMovie(avengers, company);
-
+         Assertions.assertNotNull(buyer.getBorrowedMovies());
          buyer.rentMovie(starWars, company);
 
          buyer.returnRentedMovie(avengers);
-         Assertions.assertNotNull(buyer.getBorrowedMovies());
          Assertions.assertFalse(buyer.getBorrowedMovies().contains(avengers));
     }
 }

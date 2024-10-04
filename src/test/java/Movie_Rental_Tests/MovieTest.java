@@ -15,11 +15,10 @@ public class MovieTest {
 
         Assertions.assertNotNull(movie);
 
+        //Test to see if you can rent the movie pass the amount owned by the store
         while(movie.getAmountBorrowed() != movie.getAvailableCopies()){
             Assertions.assertTrue(movie.borrowMovie(company));
         }
-
-
         Assertions.assertFalse(movie.borrowMovie(company));
 
     }
@@ -39,6 +38,7 @@ public class MovieTest {
         Assertions.assertTrue(movie.returnMovie());
         amountBorrowed--;
 
+        //Test to make sure amountBorrowed decreases everytime a copy of the movie is returned
         Assertions.assertEquals(amountBorrowed, movie.getAmountBorrowed());
 
         while(movie.getAmountBorrowed() != 0){

@@ -5,7 +5,6 @@ public class Movie {
     private String title;
     private int availableCopies;
     private double price;
-
     private int amountBorrowed = 0;
 
 
