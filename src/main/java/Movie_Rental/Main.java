@@ -1,3 +1,7 @@
+// A program to Allow a user to rent a movie
+// Written on oct 2, 2024
+// Auther: Luke Peddle
+
 package Movie_Rental;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -79,6 +83,7 @@ public class Main {
                 } else {
                     for (Movie movie : buyer.getBorrowedMovies()) {
                         if (movie.getTitle().equals(movieTitle)) {
+                            //Save the movie to be returned
                             returnMovie = movie;
                         }
                     }
@@ -115,8 +120,8 @@ public class Main {
             option = input.next();
 
             switch(option){
-
                 case "1":
+
                     RentAMovie();
                     break;
                 case "2":
