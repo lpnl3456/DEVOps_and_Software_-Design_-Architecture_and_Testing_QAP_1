@@ -59,6 +59,44 @@ public class Main {
         }
     }
 
+    public static void returnRentedMovie(){
+        boolean exitReturnMenu = false;
+        String movieTitle = "";
+        Movie returnMovie = new Movie();
+
+        if(buyer.getBorrowedMovies().size() == 0){
+            System.out.println("You do not have any rented movies");
+        }
+        else {
+
+            while (!exitReturnMenu) {
+                displayBuyerRentedMovies();
+                System.out.println("Enter the title of the movie you wish to return or enter 1 to exit");
+                movieTitle = input.nextLine();
+
+                if (movieTitle.equals("1")) {
+                    exitReturnMenu = true;
+                } else {
+                    for (Movie movie : buyer.getBorrowedMovies()) {
+                        if (movie.getTitle().equals(movieTitle)) {
+                            returnMovie = movie;
+                        }
+                    }
+
+                    if (returnMovie != null) {
+                        buyer.returnRentedMovie(returnMovie);
+                        exitReturnMenu = true;
+
+                    } else {
+                        System.out.println("Movie does not exist inside database");
+                    }
+                }
+
+
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         companyMovieList.add(avengers);
@@ -82,7 +120,7 @@ public class Main {
                     RentAMovie();
                     break;
                 case "2":
-                    System.out.println("Enter return option");
+                    returnRentedMovie();
                     break;
                 case "3":
                     displayBuyerRentedMovies();
